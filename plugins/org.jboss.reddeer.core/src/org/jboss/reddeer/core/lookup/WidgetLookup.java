@@ -35,7 +35,6 @@ import org.jboss.reddeer.core.matcher.ClassMatcher;
 import org.jboss.reddeer.core.matcher.MatcherBuilder;
 import org.jboss.reddeer.core.reference.ReferencedComposite;
 import org.jboss.reddeer.core.resolver.WidgetResolver;
-import org.jboss.reddeer.core.util.DiagnosticTool;
 import org.jboss.reddeer.core.util.Display;
 import org.jboss.reddeer.core.util.ResultRunnable;
 
@@ -103,7 +102,7 @@ public class WidgetLookup {
 			new WaitUntil(found, timePeriod);
 		} catch (WaitTimeoutExpiredException ex){
 			String exceptionText = "No matching widget found with " + am.toString();
-			exceptionText += "\n" + new DiagnosticTool().getDiagnosticInformation(parentControl);
+//			exceptionText += "\n" + new DiagnosticTool().getDiagnosticInformation(parentControl);
 			logger.error("Active widget with class type " + clazz.getName() +  " and index " + index + " was not found");
 			throw new CoreLayerException(exceptionText, ex);
 		}
