@@ -32,21 +32,21 @@ public class UserProfile {
 	private UserProfile() {
 		File userProfileFile = new File(System.getProperty("user.home"), ".reddeer");
 		if (userProfileFile.exists()) {
-			log.info("Loading RedDeer properties from user profile file: " + userProfileFile.getAbsolutePath());
+			//log.info("Loading RedDeer properties from user profile file: " + userProfileFile.getAbsolutePath());
 			FileInputStream fis = null;
 			try {
 				fis = new FileInputStream(userProfileFile);
 				userProfileProps = new Properties();
 				userProfileProps.load(fis);
 			} catch (IOException ioe) {
-				log.error("Error while loading RedDeer properties from user profile file: " + userProfileFile.getAbsolutePath());
+				//log.error("Error while loading RedDeer properties from user profile file: " + userProfileFile.getAbsolutePath());
 				ioe.printStackTrace();
 			} finally {
 				if (fis != null) {
 					try {
 						fis.close();
 					} catch (IOException ioe) {
-						log.error("Error while loading RedDeer properties from user profile file: " + userProfileFile.getAbsolutePath());
+						//log.error("Error while loading RedDeer properties from user profile file: " + userProfileFile.getAbsolutePath());
 						ioe.printStackTrace();
 					}
 				}

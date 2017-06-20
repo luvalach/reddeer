@@ -10,8 +10,6 @@
  *******************************************************************************/
 package org.eclipse.reddeer.jface.preference;
 
-import org.eclipse.swt.custom.CLabel;
-import org.hamcrest.Matcher;
 import org.eclipse.reddeer.common.wait.TimePeriod;
 import org.eclipse.reddeer.common.wait.WaitUntil;
 import org.eclipse.reddeer.common.wait.WaitWhile;
@@ -24,9 +22,12 @@ import org.eclipse.reddeer.swt.api.TreeItem;
 import org.eclipse.reddeer.swt.condition.ShellIsAvailable;
 import org.eclipse.reddeer.swt.impl.button.CancelButton;
 import org.eclipse.reddeer.swt.impl.button.OkButton;
+import org.eclipse.reddeer.swt.impl.button.PushButton;
 import org.eclipse.reddeer.swt.impl.clabel.DefaultCLabel;
 import org.eclipse.reddeer.swt.impl.shell.DefaultShell;
 import org.eclipse.reddeer.swt.impl.tree.DefaultTreeItem;
+import org.eclipse.swt.custom.CLabel;
+import org.hamcrest.Matcher;
 
 /**
  * Preference dialog implementation. 
@@ -93,7 +94,7 @@ public class PreferenceDialog extends AbstractWindow{
 	public void ok() {
 		org.eclipse.swt.widgets.Shell parentShell = ShellLookup.getInstance().getParentShell(getShell().getSWTWidget());
 		
-		OkButton ok = new OkButton();
+		PushButton ok = new PushButton("Apply and Close");
 		ok.click();
 		new WaitWhile(new ShellIsAvailable(getShell())); 
 		new DefaultShell(parentShell);

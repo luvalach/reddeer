@@ -141,7 +141,4 @@ public class TitleAreaDialog extends AbstractWindow{
 	public Class<?> getEclipseClass(){
 		return org.eclipse.jface.dialogs.TitleAreaDialog.class;
 	}
-	
-	
-
 }
