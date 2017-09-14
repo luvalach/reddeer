@@ -17,13 +17,14 @@ import org.eclipse.reddeer.core.reference.ReferencedComposite;
 import org.eclipse.reddeer.jface.wizard.WizardPage;
 import org.eclipse.reddeer.swt.api.TableItem;
 import org.eclipse.reddeer.swt.impl.table.DefaultTable;
+import org.eclipse.swt.widgets.Control;
 
 /**
  * Represents QuickFixPage in QuickFixWizard
  * @author rawagner
  *
  */
-public class QuickFixPage extends WizardPage{
+public class QuickFixPage extends WizardPage implements ReferencedComposite{
 	
 	public QuickFixPage(ReferencedComposite referencedComposite) {
 		super(referencedComposite);
@@ -56,6 +57,11 @@ public class QuickFixPage extends WizardPage{
 				return;
 			}
 		}
+	}
+
+	@Override
+	public Control getControl() {
+		return this.referencedComposite.getControl();
 	}
 
 }
